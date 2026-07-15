@@ -1,0 +1,96 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/2026/04/:day/closet-organization-ideas-for-small-los-angeles-apartments/:path*",
+      "destination": "/blog/closet-organization-ideas-for-small-los-angeles-apartments",
+      "permanent": true
+    },
+    {
+      "source": "/2026/04/:day/garage-organization-tips-for-la-homeowners/:path*",
+      "destination": "/blog/garage-organization-tips-for-la-homeowners",
+      "permanent": true
+    },
+    {
+      "source": "/2026/04/:day/how-to-organize-your-walk-in-closet-like-a-celebrity-la-style/:path*",
+      "destination": "/blog/how-to-organize-your-walk-in-closet-like-a-celebrity-la-style",
+      "permanent": true
+    },
+    {
+      "source": "/2026/03/:day/how-much-does-a-home-organizer-cost-in-los-angeles-2026-pricing-breakdown/:path*",
+      "destination": "/blog/how-much-does-a-home-organizer-cost-in-los-angeles-2026-pricing-breakdown",
+      "permanent": true
+    },
+    {
+      "source": "/2026/03/:day/top-organization-challenges-in-los-angeles-homes-and-how-to-fix-them/:path*",
+      "destination": "/blog/top-organization-challenges-in-los-angeles-homes-and-how-to-fix-them",
+      "permanent": true
+    },
+    {
+      "source": "/2026/02/:day/small-space-living-how-angelenos-maximize-storage-in-apartments-and-condos/:path*",
+      "destination": "/blog/small-space-living-how-angelenos-maximize-storage-in-apartments-and-condos",
+      "permanent": true
+    },
+    {
+      "source": "/2026/02/:day/the-7-organization-mistakes-almost-every-la-homeowner-makes/:path*",
+      "destination": "/blog/the-7-organization-mistakes-almost-every-la-homeowner-makes",
+      "permanent": true
+    },
+    {
+      "source": "/2025/12/:day/the-ultimate-guide-to-decluttering-your-la-home-room-by-room-checklist/:path*",
+      "destination": "/blog/the-ultimate-guide-to-decluttering-your-la-home-room-by-room-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/closet-organization-ideas-for-small-los-angeles-apartments",
+      "destination": "/blog/closet-organization-ideas-for-small-los-angeles-apartments",
+      "permanent": true
+    },
+    {
+      "source": "/garage-organization-tips-for-la-homeowners",
+      "destination": "/blog/garage-organization-tips-for-la-homeowners",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-organize-your-walk-in-closet-like-a-celebrity-la-style",
+      "destination": "/blog/how-to-organize-your-walk-in-closet-like-a-celebrity-la-style",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-a-home-organizer-cost-in-los-angeles-2026-pricing-breakdown",
+      "destination": "/blog/how-much-does-a-home-organizer-cost-in-los-angeles-2026-pricing-breakdown",
+      "permanent": true
+    },
+    {
+      "source": "/top-organization-challenges-in-los-angeles-homes-and-how-to-fix-them",
+      "destination": "/blog/top-organization-challenges-in-los-angeles-homes-and-how-to-fix-them",
+      "permanent": true
+    },
+    {
+      "source": "/small-space-living-how-angelenos-maximize-storage-in-apartments-and-condos",
+      "destination": "/blog/small-space-living-how-angelenos-maximize-storage-in-apartments-and-condos",
+      "permanent": true
+    },
+    {
+      "source": "/the-7-organization-mistakes-almost-every-la-homeowner-makes",
+      "destination": "/blog/the-7-organization-mistakes-almost-every-la-homeowner-makes",
+      "permanent": true
+    },
+    {
+      "source": "/the-ultimate-guide-to-decluttering-your-la-home-room-by-room-checklist",
+      "destination": "/blog/the-ultimate-guide-to-decluttering-your-la-home-room-by-room-checklist",
+      "permanent": true
+    }
+  ]
+}
