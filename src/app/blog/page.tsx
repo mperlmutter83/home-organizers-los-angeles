@@ -1,13 +1,20 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog-data';
+import { getPosts, toRenderPost, type RenderPost } from '@/lib/api';
 
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'Tips, insights, and guides on home organization in Los Angeles. Closet organization, garage decluttering, and more from Home Organizers Los Angeles.',
 };
 
-export default function BlogPage() {
+const SITE_DOMAIN = 'homeorganizerslosangeles.com';
+
+export const revalidate = 60;
+
+export default async function BlogPage() {
+  const apiPosts = await getPosts(SITE_DOMAIN);
+  const posts: RenderPost[] = apiPosts.length > 0 ? apiPosts.map(toRenderPost) : blogPosts;
   return (
     <div>
       {/* Hero Section */}
@@ -27,7 +34,7 @@ export default function BlogPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-12">Latest Insights on Home Organization</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
+            {posts.map((post) => (
               <article key={post.slug} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="p-6">
                   <span className="inline-block bg-teal-100 text-teal-700 text-sm px-3 py-1 rounded-full mb-3">
