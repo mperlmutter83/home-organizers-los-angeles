@@ -31,7 +31,9 @@ export async function POST(request: NextRequest) {
         name: `${firstName ?? ''} ${lastName ?? ''}`.trim(),
         email,
         phone,
-        service_needed: message || null,
+        service_needed:
+          message ||
+          (source === 'newsletter' ? 'NEWSLETTER SIGNUP (website newsletter form)' : null),
         submission_id,
         elapsed_ms,
         company_website, // honeypot passthrough

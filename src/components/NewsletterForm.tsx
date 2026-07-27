@@ -12,7 +12,7 @@ interface NewsletterFormProps {
  * Submits to /api/lead with the CRM spam gates (honeypot, elapsed_ms, submission_id).
  */
 export default function NewsletterForm({ variant = 'full', onMint = false }: NewsletterFormProps) {
-  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '' });
+  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', phone: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const submissionId = useRef<string>(crypto.randomUUID());
   const startedAt = useRef<number>(Date.now());
@@ -33,7 +33,7 @@ export default function NewsletterForm({ variant = 'full', onMint = false }: New
       });
       if (response.ok) {
         setStatus('success');
-        setFormData({ firstName: '', lastName: '', email: '' });
+        setFormData({ firstName: '', lastName: '', email: '', phone: '' });
         submissionId.current = crypto.randomUUID();
         startedAt.current = Date.now();
       } else {
@@ -96,6 +96,16 @@ export default function NewsletterForm({ variant = 'full', onMint = false }: New
           required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          className={inputClass}
+        />
+      </p>
+      <p>
+        <input
+          type="tel"
+          placeholder="Phone"
+          required
+          value={formData.phone}
+          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
           className={inputClass}
         />
       </p>
