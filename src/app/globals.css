@@ -9,17 +9,19 @@
   --font-serif: var(--font-merriweather), Georgia, "Times New Roman", serif;
 }
 
-body {
-  background: #ffffff;
-  color: var(--color-ink);
-  font-family: var(--font-merriweather), Georgia, "Times New Roman", serif;
-  line-height: 1.75;
-  -webkit-font-smoothing: antialiased;
-}
+@layer base {
+  body {
+    background: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-merriweather), Georgia, "Times New Roman", serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-worksans), Helvetica, Arial, sans-serif;
-  color: var(--color-navy);
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-worksans), Helvetica, Arial, sans-serif;
+    color: var(--color-navy);
+  }
 }
 
 /* Divi-style pill buttons (Merriweather bold 14px, radius 100px) */
