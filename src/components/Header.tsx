@@ -1,88 +1,89 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about-us' },
+  { label: 'Services', href: '/services' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact Us', href: '/contact-us' },
+];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'About', href: '/about' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
-  ];
+  const [open, setOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-teal-600">Home Organizers</span>
-              <span className="text-2xl font-light text-gray-700 ml-2">Los Angeles</span>
+    <header className="bg-black sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
+        <Link href="/" aria-label="Home Organizers Los Angeles" className="py-2">
+          <Image
+            src="/images/logo-black.png"
+            alt="Home Organizers Los Angeles"
+            width={72}
+            height={72}
+            priority
+          />
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-white text-sm font-sans font-medium hover:text-mint transition-colors"
+            >
+              {link.label}
             </Link>
-          </div>
+          ))}
+          <a
+            href="tel:+18187482484"
+            className="text-white text-sm font-sans font-semibold hover:text-mint transition-colors"
+          >
+            (818) 748-2484
+          </a>
+        </nav>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-teal-600 font-medium transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <a
-              href="tel:+18187482484"
-              className="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors font-medium"
-            >
-              (818) 748-2484
-            </a>
-          </div>
+        {/* Mobile hamburger */}
+        <button
+          className="lg:hidden text-white p-2"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            {open ? (
+              <path d="M6 6l12 12M18 6L6 18" />
+            ) : (
+              <path d="M3 6h18M3 12h18M3 18h18" />
+            )}
+          </svg>
+        </button>
+      </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-teal-600"
+      {/* Mobile menu */}
+      {open && (
+        <nav className="lg:hidden bg-black border-t border-white/10 px-4 pb-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="block text-white text-sm font-sans py-3 border-b border-white/5"
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden pb-4">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block py-2 text-gray-700 hover:text-teal-600 font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <a
-              href="tel:+18187482484"
-              className="block mt-2 text-center bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors font-medium"
-            >
-              (818) 748-2484
-            </a>
-          </div>
-        )}
-      </nav>
+              {link.label}
+            </Link>
+          ))}
+          <a
+            href="tel:+18187482484"
+            className="block text-mint text-sm font-sans font-semibold py-3"
+          >
+            (818) 748-2484
+          </a>
+        </nav>
+      )}
     </header>
   );
 }

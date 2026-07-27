@@ -3,21 +3,15 @@ import { getAllPosts } from '@/lib/blog-data';
 
 /**
  * GET /api/posts — machine-readable blog feed for the Yes Crew CRM.
- *
- * Merges local blog-data posts with the centralized blog store
- * (yescrew-dashboard blog_posts, polled with ?include=scheduled so
- * upcoming scheduled posts appear on the CRM /content page).
- * Central posts win on slug conflicts.
- * Shape: { slug, title, category, date, publishedAt, status, url }
+ * Merge variant: local migrated posts + central blog_posts (with scheduled),
+ * central wins on slug conflicts. Posts live at ROOT URLs on this site.
  */
-
 export const dynamic = 'force-dynamic';
 
 const SITE_DOMAIN = 'homeorganizerslosangeles.com';
-const POST_URL_BASE = 'https://www.homeorganizerslosangeles.com/blog';
+const POST_URL_BASE = 'https://www.homeorganizerslosangeles.com';
 const CENTRAL_API = `https://yescrew-dashboard.vercel.app/api/posts?site=${SITE_DOMAIN}&include=scheduled`;
 
-/** Current date in America/Los_Angeles as YYYY-MM-DD. */
 function getTodayLA(): string {
   return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
 }
