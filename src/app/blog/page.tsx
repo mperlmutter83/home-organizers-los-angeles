@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { blogPosts } from '@/lib/blog-data';
+import { getPublishedPosts } from '@/lib/blog-data';
 import { getPosts, toRenderPost, type RenderPost } from '@/lib/api';
 
 export const metadata: Metadata = {
@@ -13,6 +13,7 @@ const SITE_DOMAIN = 'homeorganizerslosangeles.com';
 export const revalidate = 60;
 
 export default async function BlogPage() {
+  const blogPosts = getPublishedPosts();
   const apiPosts = await getPosts(SITE_DOMAIN);
   const posts: RenderPost[] = apiPosts.length > 0 ? apiPosts.map(toRenderPost) : blogPosts;
   return (

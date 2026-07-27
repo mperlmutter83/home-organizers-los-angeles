@@ -1,7 +1,7 @@
 export interface BlogPost {
   slug: string;
   title: string;
-  date: string;
+  date: string; publishedAt: string;
   category: string;
   excerpt: string;
   content: string;
@@ -11,7 +11,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'closet-organization-ideas-for-small-los-angeles-apartments',
     title: 'Closet Organization Ideas for Small Los Angeles Apartments',
-    date: 'April 29, 2026',
+    date: 'April 29, 2026', publishedAt: '2026-04-29',
     category: 'Closet Organization',
     excerpt: 'Living in Los Angeles often means making the most of every square foot. In many LA apartments—especially studios, historic buildings, and newer "micro" layouts—closets can feel more like a tight nook than real storage.',
     content: `Living in Los Angeles often means making the most of every square foot. In many LA apartments—especially studios, historic buildings, and newer "micro" layouts—closets can feel more like a tight nook than real storage. The good news: with a few smart upgrades and a consistent system, you can create a closet that holds more, looks better, and stays organized.
@@ -65,7 +65,7 @@ If your closet feels impossible to manage, the issue is often a combination of l
   {
     slug: 'garage-organization-tips-for-la-homeowners',
     title: 'Garage Organization Tips for LA Homeowners',
-    date: 'April 11, 2026',
+    date: 'April 11, 2026', publishedAt: '2026-04-11',
     category: 'Garage Organization',
     excerpt: 'In Los Angeles, the garage often becomes a catch-all for everything that doesn\'t fit inside the house: surfboards, holiday décor, sports gear, tools, and moving boxes that never got unpacked.',
     content: `In Los Angeles, the garage often becomes a catch-all for everything that doesn't fit inside the house: surfboards, holiday décor, sports gear, tools, and moving boxes that never got unpacked. But with rising storage costs and limited square footage in many LA neighborhoods, a well-organized garage can feel like gaining an extra room.
@@ -124,7 +124,7 @@ If your garage feels overwhelming, you're not alone. **Home Organizers Los Angel
   {
     slug: 'how-to-organize-your-walk-in-closet-like-a-celebrity-la-style',
     title: 'How to Organize Your Walk-In Closet Like a Celebrity (LA Style)',
-    date: 'April 4, 2026',
+    date: 'April 4, 2026', publishedAt: '2026-04-04',
     category: 'Closet Organization',
     excerpt: 'If you\'ve ever wondered how celebrities keep their walk-in closets looking camera-ready, the secret isn\'t just having more space—it\'s having a system.',
     content: `If you've ever wondered how celebrities keep their walk-in closets looking camera-ready, the secret isn't just having more space—it's having a **system**. In Los Angeles, where style, speed, and everyday convenience matter, a well-organized closet feels like a personal boutique.
@@ -182,7 +182,7 @@ Sort by **category first** (tops, denim, dresses), then arrange each category by
   {
     slug: 'how-much-does-a-home-organizer-cost-in-los-angeles-2026-pricing-breakdown',
     title: 'How Much Does a Home Organizer Cost in Los Angeles? 2026 Pricing Breakdown',
-    date: 'March 27, 2026',
+    date: 'March 27, 2026', publishedAt: '2026-03-27',
     category: 'Home Organization',
     excerpt: 'If you\'re considering hiring a professional organizer, you\'re probably wondering what it costs in 2026—and what you actually get for the price.',
     content: `If you're considering hiring a professional organizer, you're probably wondering what it costs in 2026—and what you actually get for the price. In Los Angeles, home organizing rates vary based on the organizer's experience, the size of the project, and whether your project includes add-ons like donation runs or storage system installation.
@@ -238,7 +238,7 @@ For many households, professional organizing pays off in time savings, reduced s
   {
     slug: 'top-organization-challenges-in-los-angeles-homes-and-how-to-fix-them',
     title: 'Top Organization Challenges in Los Angeles Homes (and How to Fix Them)',
-    date: 'March 19, 2026',
+    date: 'March 19, 2026', publishedAt: '2026-03-19',
     category: 'Home Organization',
     excerpt: 'Living in Los Angeles has a lot of perks—great weather, active lifestyles, and vibrant neighborhoods. But LA homes also come with unique organization challenges.',
     content: `Living in Los Angeles has a lot of perks—great weather, active lifestyles, and vibrant neighborhoods. But LA homes also come with unique organization challenges: smaller closets in older buildings, limited garage space, busy schedules, and constant inflow of gear for work, school, fitness, and the beach.
@@ -293,7 +293,7 @@ If you're tired of clutter, **Home Organizers Los Angeles** can help. We create 
   {
     slug: 'small-space-living-how-angelenos-maximize-storage-in-apartments-and-condos',
     title: 'Small Space Living: How Angelenos Maximize Storage in Apartments and Condos',
-    date: 'February 23, 2026',
+    date: 'February 23, 2026', publishedAt: '2026-02-23',
     category: 'Apartments',
     excerpt: 'In Los Angeles, space is at a premium. From cozy studio apartments in Koreatown to modern condos in Downtown LA, Angelenos have mastered the art of living well in smaller footprints.',
     content: `In Los Angeles, space is at a premium. From cozy studio apartments in Koreatown to modern condos in Downtown LA, Angelenos have mastered the art of living well in smaller footprints. The key is smart storage: using every inch intentionally, reducing visual clutter, and creating systems that are easy to maintain.
@@ -352,7 +352,7 @@ Under-bed space is one of the most valuable storage areas in small apartments:
   {
     slug: 'the-7-organization-mistakes-almost-every-la-homeowner-makes',
     title: 'The 7 Organization Mistakes Almost Every LA Homeowner Makes',
-    date: 'February 17, 2026',
+    date: 'February 17, 2026', publishedAt: '2026-02-17',
     category: 'Home Organization',
     excerpt: 'Living in Los Angeles comes with incredible perks—sunshine, style, and vibrant neighborhoods from Studio City to Santa Monica. But LA homes also come with unique organization challenges.',
     content: `Living in Los Angeles comes with incredible perks—sunshine, style, and vibrant neighborhoods from Studio City to Santa Monica. But LA homes also come with unique organization challenges: limited storage, high real estate costs, busy lifestyles, and a constant flow of stuff.
@@ -426,7 +426,7 @@ If you're ready to stop reorganizing the same clutter over and over again, **Hom
   {
     slug: 'the-ultimate-guide-to-decluttering-your-la-home-room-by-room-checklist',
     title: 'The Ultimate Guide to Decluttering Your LA Home: Room-by-Room Checklist',
-    date: 'December 10, 2025',
+    date: 'December 10, 2025', publishedAt: '2025-12-10',
     category: 'Home Organization',
     excerpt: 'Living in Los Angeles means sunshine, creativity, and fast-paced lifestyles—but it also means limited storage, small apartments, and clutter that builds up fast.',
     content: `Living in Los Angeles means sunshine, creativity, and fast-paced lifestyles—but it also means limited storage, small apartments, and clutter that builds up fast. Whether you're in a cozy North Hollywood studio or a spacious Sherman Oaks home, decluttering is the foundation of an organized, stress-free space.
@@ -494,10 +494,33 @@ Decluttering is the first step—**professional organizing** turns your space in
   }
 ];
 
-export function getPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find(post => post.slug === slug);
+
+/** Current date in America/Los_Angeles as YYYY-MM-DD. */
+function getTodayLA(): string {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
 }
 
+/**
+ * Only posts whose publishedAt is <= today (America/Los_Angeles).
+ * Use for all public-facing listings and lookups so scheduled posts
+ * stay invisible until their date.
+ */
+export function getPublishedPosts(): BlogPost[] {
+  const today = getTodayLA();
+  return blogPosts.filter(post => post.publishedAt <= today);
+}
+
+/** Published post by slug — undefined if not found or not yet published. */
+export function getPostBySlug(slug: string): BlogPost | undefined {
+  return getPublishedPosts().find(post => post.slug === slug);
+}
+
+/** Slugs of published posts (generateStaticParams). */
 export function getAllPostSlugs(): string[] {
-  return blogPosts.map(post => post.slug);
+  return getPublishedPosts().map(post => post.slug);
+}
+
+/** ALL posts (published + scheduled) — /api/posts feed & admin only. */
+export function getAllPosts(): BlogPost[] {
+  return blogPosts;
 }
