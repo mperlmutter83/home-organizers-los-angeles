@@ -83,10 +83,10 @@ export default function ContactUs() {
             Schedule Your Organization Session
           </h2>
           <p className="text-ink/80 text-center leading-relaxed mb-10 max-w-2xl mx-auto">
-            Ready to reclaim your space? Pick a time below to book an
-            appointment with our expert organizers. Let us help you create a
-            clutter-free environment that enhances your productivity and peace
-            of mind.
+            Ready to reclaim your space? We offer a free 15-minute
+            consultation. Pick a time below to book an appointment with our
+            expert organizers. Let us help you create a clutter-free
+            environment that enhances your productivity and peace of mind.
           </p>
           <div className="bg-white rounded-md shadow-[0px_24px_72px_-12px_rgba(0,0,0,0.12)] p-4 md:p-8">
             <BookingEmbed />
