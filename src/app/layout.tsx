@@ -57,6 +57,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${merriweather.variable} ${workSans.variable}`}>
       <head>
+        {/* RFM site data - pushed before GTM loads */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  rfm: {
+    schema_version: "1.0",
+    site_id: "home_organizers_los_angeles",
+    provider_id: "0bbbc7d8-2c44-4088-856f-4617d78daffe",
+    provider_name: "Home Organizers Los Angeles",
+    service_category: "home_organization",
+    market: "los_angeles"
+  }
+});`,
+          }}
+        />
         {/* Google tag (gtag.js) — carried over from the WordPress site */}
         <script
           async
